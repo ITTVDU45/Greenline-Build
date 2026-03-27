@@ -1,0 +1,25 @@
+# Dependencies & builds
+node_modules/
+dist/
+build/
+.next/
+out/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# OS & editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.cursor/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Test / coverage
+coverage/
