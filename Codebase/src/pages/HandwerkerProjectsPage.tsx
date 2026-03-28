@@ -1,4 +1,6 @@
+import { BrandLogoLink } from '../components/BrandLogoLink';
 import { DeviceShell } from '../components/DeviceShell';
+import { assets } from '../data/screens';
 
 const projects = [
   {
@@ -21,7 +23,7 @@ export function HandwerkerProjectsPage() {
   return (
     <DeviceShell className="handwerker-screen">
       <section className="handwerker-header">
-        <div className="hw-logo">Logo</div>
+        <BrandLogoLink imgClassName="" src={assets.brandLogoAlt} />
         <div>
           <h1>Willkommen, Rebo Gala</h1>
           <p>Hier findest du alle dir zugeordneten Projekte.</p>

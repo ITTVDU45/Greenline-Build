@@ -1,25 +1,39 @@
+import { Link, useLocation } from 'react-router-dom';
 import { BackTextButton } from '../components/BackTextButton';
+import { BrandLogoLink } from '../components/BrandLogoLink';
 import { DeviceShell } from '../components/DeviceShell';
+import { assets } from '../data/screens';
+
+type ContactUnlockLocationState = { from?: string };
 
 export function ContactUnlockPage() {
-  return (
-    <DeviceShell className="flow-screen">
-      <section className="hero-header">
-        <BackTextButton />
-        <h1>Kontaktdaten freigeschaltet</h1>
-        <p>Du kannst den Kunden jetzt direkt kontaktieren.</p>
-      </section>
+  const location = useLocation();
+  const backTarget =
+    (location.state as ContactUnlockLocationState | null)?.from ?? '/handwerker-projekt-annehmen';
 
-      <section className="flow-content">
-        <article className="hint-card success-flag">
-          <h4>Projekt erfolgreich aktiviert</h4>
-          <p>
-            Die Projektgebühr wurde bestätigt. Die Kontaktdaten des Kunden sind nun für dich
-            sichtbar.
-          </p>
+  return (
+    <DeviceShell className="hw-contact-screen" width={390}>
+      <header className="hw-contact-topbar">
+        <BrandLogoLink imgClassName="hw-contact-brand" src={assets.hwContactBrandLogo} />
+        <img alt="" className="hw-contact-avatar" src={assets.hwCraftHeaderAvatar} />
+      </header>
+
+      <div className="hw-contact-body">
+        <div className="hw-contact-green">
+          <BackTextButton className="hw-inquiry-back" fallbackTo={backTarget} />
+          <h1 className="hw-contact-title">Kontaktdaten freigeschaltet</h1>
+          <p className="hw-contact-sub">Du kannst den Kunden jetzt direkt kontaktieren.</p>
+        </div>
+
+        <article className="hw-contact-card">
+          <div className="hw-contact-success-icon" aria-hidden="true">
+            ✓
+          </div>
+          <h3>Projekt erfolgreich aktiviert</h3>
+          <p>Zahlung bestätigt. Kontaktdaten sind jetzt sichtbar.</p>
         </article>
 
-        <article className="info-card">
+        <article className="hw-contact-card hw-contact-profile">
           <h3>Kundenprofil</h3>
           <div className="contact-grid">
             <span>Name</span>
@@ -27,11 +41,13 @@ export function ContactUnlockPage() {
             <span>Telefon</span>
             <strong>+49 171 1234567</strong>
             <span>E-Mail</span>
-            <strong>max.mustermann@email.de</strong>
+            <span>
+              <a className="hw-contact-mail" href="mailto:max.mustermann@email.de">
+                max.mustermann@email.de
+              </a>
+            </span>
             <span>Adresse</span>
-            <strong>Musterstraße 12, 50733 Köln</strong>
-            <span>Projektstart</span>
-            <strong>Innerhalb 0–1 Monat</strong>
+            <strong>Beispielstr. 111, 471234 Berlin</strong>
           </div>
           <div className="profile-tags">
             <span>📞 Anrufen</span>
@@ -40,32 +56,27 @@ export function ContactUnlockPage() {
           </div>
         </article>
 
-        <article className="info-card">
+        <article className="hw-contact-card">
+          <h3>Terminvorschlag vom Kunden</h3>
+          <p>01. März 2026, 10:00 Uhr</p>
+        </article>
+
+        <article className="hw-contact-card">
           <h3>Nächster Schritt</h3>
           <p>
-            Bitte nimm innerhalb von 24 Stunden Kontakt mit dem Kunden auf, um einen
-            Vor-Ort-Termin zu vereinbaren.
+            Bitte nimm innerhalb von 24 Stunden Kontakt auf, um den Vor-Ort-Termin zu vereinbaren.
           </p>
-          <small>Eine schnelle Rückmeldung erhöht deine Abschlusswahrscheinlichkeit.</small>
         </article>
 
-        <article className="info-card">
-          <h3>Kontaktaufnahme</h3>
-          <label className="status-row">
-            <input type="checkbox" />
-            <span>Noch nicht erfolgt</span>
-          </label>
-          <label className="status-row">
-            <input type="checkbox" />
-            <span>Kunde kontaktiert</span>
-          </label>
-        </article>
-      </section>
-
-      <footer className="upsell-footer">
-        <button className="primary-pill wide">Kontaktaufnahme bestätigen</button>
-        <button className="outline-pill wide">Projekt später bearbeiten</button>
-      </footer>
+        <div className="hw-contact-footer-actions">
+          <Link className="primary-pill wide button-link" to="/handwerker-dashboard">
+            Kontaktaufnahme bestätigen
+          </Link>
+          <Link className="hw-contact-later" to="/handwerker-dashboard">
+            Projekt später bearbeiten
+          </Link>
+        </div>
+      </div>
     </DeviceShell>
   );
 }

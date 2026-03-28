@@ -44,6 +44,40 @@ a {
   text-decoration: none;
 }
 
+.brand-logo-link {
+  display: inline-flex;
+  line-height: 0;
+}
+
+.brand-logo-link:focus-visible {
+  border-radius: 6px;
+  outline: 2px solid var(--glb-green);
+  outline-offset: 3px;
+}
+
+.brand-row-home-link {
+  color: inherit;
+}
+
+.brand-row-home-link:focus-visible {
+  border-radius: 12px;
+  outline: 2px solid var(--glb-green);
+  outline-offset: 4px;
+}
+
+.handwerker-header .brand-logo-link {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.handwerker-header .brand-logo-link img {
+  display: block;
+  height: 40px;
+  object-fit: contain;
+  width: 40px;
+}
+
 .app-stage {
   display: flex;
   justify-content: center;
@@ -58,14 +92,150 @@ a {
   position: relative;
 }
 
+/* Startseite: nur die zentrale „Phone“-Shell weiß; Außenbereich bleibt #1f1f1f */
+.device-shell.landing-screen {
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.32);
+}
+
+.device-shell.role-select-screen {
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.32);
+}
+
+.role-select-screen {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 640px;
+  padding-bottom: 28px;
+}
+
+.role-select-header {
+  padding: 28px 24px 8px;
+  text-align: center;
+}
+
+.role-select-header .brand-logo-link {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+
+.role-select-logo {
+  display: block;
+  height: 88px;
+  width: 88px;
+}
+
+.role-select-header h1 {
+  color: var(--glb-dark);
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.role-select-header p {
+  color: #444;
+  font-size: 14px;
+  margin: 0;
+}
+
+.role-select-brand-link:focus-visible {
+  border-radius: 8px;
+  outline: 2px solid var(--glb-green);
+  outline-offset: 4px;
+}
+
+.role-select-grid {
+  display: grid;
+  flex: 1;
+  gap: 16px;
+  padding: 20px 20px 0;
+}
+
+.role-select-card {
+  background: #fafafa;
+  border: 2px solid var(--glb-border);
+  border-radius: 18px;
+  color: inherit;
+  display: grid;
+  gap: 10px;
+  justify-items: start;
+  padding: 22px 20px;
+  text-align: left;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.role-select-card:hover {
+  border-color: rgba(26, 60, 52, 0.35);
+  box-shadow: 0 8px 22px rgba(18, 59, 90, 0.1);
+  transform: translateY(-2px);
+}
+
+.role-select-card:focus-visible {
+  outline: 2px solid var(--glb-green);
+  outline-offset: 3px;
+}
+
+.role-select-card--customer {
+  border-left: 5px solid var(--glb-green);
+}
+
+.role-select-card--craft {
+  border-left: 5px solid var(--glb-navy);
+}
+
+.role-select-card-icon {
+  align-items: center;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  font-size: 26px;
+  height: 52px;
+  justify-content: center;
+  width: 52px;
+}
+
+.role-select-card strong {
+  color: #111;
+  font-size: 17px;
+}
+
+.role-select-card p {
+  color: #555;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.role-select-card-cta {
+  color: var(--glb-dark);
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 4px;
+  text-decoration: underline;
+}
+
 .landing-screen {
-  background:
-    linear-gradient(to bottom, transparent 0 148px, rgba(0, 0, 0, 0) 148px),
-    url('https://www.figma.com/api/mcp/asset/f729b160-7463-4f6b-8e81-7e4f5f9e67ba');
-  background-position: bottom center;
-  background-repeat: no-repeat;
-  background-size: 390px 212px;
+  background: #fff;
   min-height: 678px;
+}
+
+.landing-back-row {
+  padding: 8px 20px 0;
+}
+
+.landing-back-link {
+  color: rgba(0, 0, 0, 0.38);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+
+.landing-back-link:hover {
+  color: rgba(0, 0, 0, 0.55);
+  text-decoration: underline;
 }
 
 .landing-card {
@@ -82,6 +252,10 @@ a {
   gap: 12px;
   justify-content: center;
   margin-bottom: 12px;
+}
+
+.landing-brand-row .brand-logo-link {
+  flex-shrink: 0;
 }
 
 .landing-brand-row h2,
@@ -193,9 +367,10 @@ a {
 }
 
 .benefit-card {
-  background: rgba(250, 250, 250, 0.83);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
+  background: #fff;
+  border: 1px solid var(--glb-border);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(26, 60, 52, 0.07);
   min-height: 165px;
   padding: 10px 8px 14px;
   text-align: center;
@@ -215,6 +390,7 @@ a {
 }
 
 .benefit-card h3 {
+  color: var(--glb-dark);
   font-size: 11px;
   font-weight: 700;
   line-height: 1.2;
@@ -222,14 +398,20 @@ a {
 }
 
 .benefit-card p {
+  color: #333;
   font-size: 10px;
   line-height: 1.25;
   margin: 0;
 }
 
 .landing-actions {
-  color: #fff;
+  color: var(--glb-dark);
   padding: 18px 21px 20px;
+}
+
+.landing-actions .auth-prompt a {
+  color: var(--glb-navy);
+  text-decoration: underline;
 }
 
 .primary-pill,
@@ -413,6 +595,10 @@ a {
   padding: 69px 40px 32px;
 }
 
+.login-card > .brand-logo-link {
+  line-height: 0;
+}
+
 .login-logo {
   height: 164px;
   width: 164px;
@@ -427,6 +613,12 @@ a {
 .login-card > p {
   font-size: 16px;
   margin: 0 0 38px;
+}
+
+.handwerker-login-hint {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px;
+  margin: -28px 0 24px !important;
 }
 
 .login-form {
@@ -513,6 +705,10 @@ a {
   justify-content: space-between;
   min-height: 73px;
   padding: 0 18px 0 4px;
+}
+
+.top-brand-bar .brand-logo-link {
+  flex-shrink: 0;
 }
 
 .brand-mark-sm {
@@ -2675,6 +2871,10 @@ button.quality-card:focus-visible {
   padding: 16px;
 }
 
+.handwerker-header > .brand-logo-link {
+  justify-self: center;
+}
+
 .handwerker-header h1 {
   color: #111;
   font-size: 16px;
@@ -2684,6 +2884,28 @@ button.quality-card:focus-visible {
 .handwerker-header p {
   font-size: 12px;
   margin: 0;
+}
+
+.hw-dashboard-intro {
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 16px 20px 18px;
+}
+
+.hw-dashboard-intro h1 {
+  color: var(--glb-dark);
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.hw-dashboard-intro p {
+  color: #333;
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0;
+  max-width: 32ch;
 }
 
 .dashboard-title-block {
@@ -2872,6 +3094,585 @@ button.quality-card:focus-visible {
 
 .featured-card {
   border-left: 4px solid var(--glb-green);
+}
+
+/* —— Handwerker Anfrage-Detail (Figma 451:320, Frame 67: Ist-Zustand + 2 KI-Varianten) —— */
+.hw-inquiry-screen {
+  background: #fff;
+  padding: 0;
+}
+
+.hw-inquiry-topbar {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 8px 4px 4px;
+}
+
+.hw-inquiry-brand {
+  height: 80px;
+  width: 80px;
+}
+
+.hw-inquiry-avatar {
+  border-radius: 50%;
+  height: 53px;
+  object-fit: cover;
+  width: 53px;
+}
+
+.hw-inquiry-hero-band {
+  background: var(--glb-dark);
+  color: #fff;
+  padding: 16px 24px 20px;
+}
+
+.hw-inquiry-back {
+  background: none;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  padding: 0;
+  text-align: left;
+}
+
+.hw-inquiry-hero-title {
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0 0 6px;
+}
+
+.hw-inquiry-hero-sub {
+  font-size: 12px;
+  margin: 0 0 14px;
+  opacity: 0.95;
+}
+
+.hw-inquiry-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hw-inquiry-badge {
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+}
+
+.hw-inquiry-badge--amber {
+  background: #f59e0b;
+  color: #fff;
+}
+
+.hw-inquiry-badge--navy {
+  background: linear-gradient(90deg, #1c4d81, var(--glb-navy));
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+
+.hw-inquiry-scroll {
+  background: #fff;
+  padding-bottom: 32px;
+}
+
+.hw-inquiry-section-title {
+  color: var(--glb-dark);
+  font-size: 18px;
+  margin: 20px 20px 10px;
+}
+
+.hw-inquiry-photo-frame {
+  border: 1px solid var(--glb-navy);
+  border-radius: 6px;
+  margin: 0 20px;
+  overflow: hidden;
+}
+
+.hw-inquiry-photo {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+.hw-inquiry-variant-row {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  margin: 0 16px;
+}
+
+.hw-inquiry-variant {
+  border: 1px solid var(--glb-navy);
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.hw-inquiry-variant-label {
+  background: var(--glb-dark);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  left: 8px;
+  padding: 4px 10px;
+  position: absolute;
+  top: 8px;
+  z-index: 1;
+}
+
+.hw-inquiry-variant-img {
+  display: block;
+  height: 120px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.hw-inquiry-detail-card {
+  background: #e8f5e9;
+  border-radius: 14px;
+  margin: 0 16px;
+  padding: 16px 14px 20px;
+}
+
+.hw-inquiry-detail-block {
+  margin-bottom: 16px;
+}
+
+.hw-inquiry-detail-block:last-child {
+  margin-bottom: 0;
+}
+
+.hw-inquiry-detail-block h3 {
+  color: var(--glb-navy);
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0 0 8px;
+}
+
+.hw-inquiry-detail-block p {
+  font-size: 12px;
+  line-height: 1.35;
+  margin: 0 0 4px;
+}
+
+.hw-inquiry-desc-card {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  margin: 0 16px;
+  padding: 18px 16px;
+}
+
+.hw-inquiry-desc-card p {
+  font-size: 15px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.hw-inquiry-price-band {
+  align-items: center;
+  background: rgba(132, 204, 22, 0.15);
+  border: 1px solid rgba(132, 204, 22, 0.2);
+  border-radius: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin: 20px 16px;
+  padding: 16px;
+}
+
+.hw-inquiry-price-label {
+  color: var(--glb-dark);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.hw-inquiry-price-value {
+  color: var(--glb-navy);
+  font-size: 20px;
+}
+
+.hw-inquiry-quick-card {
+  background: #fafafa;
+  border: 2px solid #e0e0e0;
+  border-radius: 14px;
+  margin: 0 20px 20px;
+  padding: 14px 12px 16px;
+}
+
+.hw-inquiry-quick-label {
+  color: var(--glb-navy);
+  font-size: 11px;
+  font-weight: 600;
+  margin: 0 0 10px 4px;
+}
+
+.hw-inquiry-quick-actions {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hw-inquiry-quick-btn {
+  border-radius: 6px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 22px 8px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.hw-inquiry-quick-btn--green {
+  background: var(--glb-dark);
+}
+
+.hw-inquiry-quick-btn--navy {
+  background: var(--glb-navy);
+}
+
+.hw-inquiry-back-pill {
+  border: 2px solid #e0e0e0;
+  border-radius: 50px;
+  color: #111;
+  display: block;
+  margin: 0 24px;
+  padding: 14px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* —— Handwerker Projekt annehmen (Figma 451:314) —— */
+.hw-accept-screen {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0;
+  position: relative;
+}
+
+.hw-accept-topbar {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  flex-shrink: 0;
+  justify-content: space-between;
+  padding: 0 4px 0 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.hw-accept-brand {
+  height: 72px;
+  width: 72px;
+}
+
+.hw-accept-avatar {
+  border-radius: 50%;
+  height: 53px;
+  margin-right: 8px;
+  object-fit: cover;
+  width: 53px;
+}
+
+.hw-accept-green {
+  background: var(--glb-dark);
+  color: #fff;
+  flex-shrink: 0;
+  padding: 14px 22px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.hw-accept-green .hw-inquiry-back {
+  margin-bottom: 6px;
+}
+
+.hw-accept-title {
+  font-size: 22px;
+  line-height: 1.2;
+  margin: 0 0 8px;
+}
+
+.hw-accept-sub {
+  font-size: 13px;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.hw-accept-card-wrap {
+  flex: 1 1 auto;
+  margin: 16px 16px 24px;
+  min-height: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.hw-accept-card {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  padding: 14px 14px 18px;
+}
+
+.hw-accept-row-top {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 96px 1fr;
+  margin-bottom: 12px;
+}
+
+.hw-accept-thumb {
+  border: 1px solid var(--glb-navy);
+  border-radius: 8px;
+  height: 72px;
+  overflow: hidden;
+  width: 96px;
+}
+
+.hw-accept-thumb img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.hw-accept-basis-label {
+  font-size: 12px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.hw-accept-basis-price {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.hw-accept-divider {
+  background: #111;
+  height: 2px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.hw-accept-info-row {
+  display: grid;
+  gap: 8px 12px;
+  grid-template-columns: 32px 1fr;
+  margin-bottom: 12px;
+}
+
+.hw-accept-icon-bubble {
+  align-items: center;
+  background: #e8f5e9;
+  border-radius: 16px;
+  display: flex;
+  font-size: 14px;
+  height: 32px;
+  justify-content: center;
+  width: 32px;
+}
+
+.hw-accept-info-row small {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.hw-accept-info-row strong {
+  display: block;
+  font-size: 15px;
+}
+
+.hw-accept-match {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 8px 0 4px;
+}
+
+.hw-accept-match-sub {
+  font-size: 11px;
+  margin: 0 0 12px;
+}
+
+.hw-accept-fee-line {
+  align-items: baseline;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.hw-accept-fee-note {
+  font-size: 11px;
+  margin: 10px 0 16px;
+}
+
+.hw-accept-footer {
+  background: #fff;
+  flex-shrink: 0;
+  margin-top: auto;
+  padding: 0 16px 28px;
+  position: relative;
+  z-index: 1;
+}
+
+.hw-accept-footer .primary-pill.wide {
+  font-size: 14px;
+  line-height: 1.25;
+  min-height: 52px;
+  padding-left: 12px;
+  padding-right: 12px;
+  width: 100%;
+}
+
+/* —— Kontakt freigeschaltet (Figma 451:328, Frame 68) —— */
+.hw-contact-screen {
+  background: #f7f7f7;
+  min-height: 100vh;
+  padding: 4px 0 24px;
+}
+
+.hw-contact-topbar {
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 4px;
+  padding: 2px 6px;
+}
+
+.hw-contact-brand {
+  height: 72px;
+  width: 72px;
+}
+
+.hw-contact-avatar {
+  border-radius: 50%;
+  height: 53px;
+  margin-right: 4px;
+  object-fit: cover;
+  width: 53px;
+}
+
+.hw-contact-body {
+  background: #f7f7f7;
+  border-radius: 20px;
+  margin: 0 4px;
+  padding: 0 12px 20px;
+}
+
+.hw-contact-green {
+  background: var(--glb-dark);
+  border-radius: 0 0 12px 12px;
+  color: #fff;
+  margin: 0 -8px 16px;
+  padding: 18px 20px 22px;
+}
+
+.hw-contact-green .hw-inquiry-back {
+  margin-bottom: 8px;
+}
+
+.hw-contact-title {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+}
+
+.hw-contact-sub {
+  font-size: 13px;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.hw-contact-card {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid #e8e8e8;
+  border-radius: 16px;
+  margin-bottom: 12px;
+  padding: 14px 16px;
+}
+
+.hw-contact-success-icon {
+  align-items: center;
+  background: #e8f5e9;
+  border-radius: 22px;
+  display: flex;
+  font-size: 20px;
+  font-weight: 900;
+  height: 44px;
+  justify-content: center;
+  margin-bottom: 10px;
+  width: 44px;
+}
+
+.hw-contact-card h3 {
+  font-size: 14px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.hw-contact-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.hw-contact-profile .contact-grid {
+  margin-top: 8px;
+}
+
+.hw-contact-profile .contact-grid strong {
+  font-weight: 800;
+}
+
+.hw-contact-divider {
+  background: #e0e0e0;
+  height: 1px;
+  margin: 12px 0;
+  width: 100%;
+}
+
+.hw-contact-mail {
+  color: inherit;
+  font-weight: 800;
+  text-decoration: underline;
+}
+
+.hw-contact-footer-actions {
+  display: grid;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.hw-contact-later {
+  background: none;
+  border: 0;
+  color: #111;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .chat-screen {

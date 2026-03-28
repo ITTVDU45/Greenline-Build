@@ -11,12 +11,15 @@ import { DashboardUpdatedPage } from './pages/DashboardUpdatedPage';
 import { FeatureSelectionPage } from './pages/FeatureSelectionPage';
 import { HandwerkerDashboardPage } from './pages/HandwerkerDashboardPage';
 import { HandwerkerInquiriesPage } from './pages/HandwerkerInquiriesPage';
+import { HandwerkerInquiryDetailPage } from './pages/HandwerkerInquiryDetailPage';
+import { HandwerkerLoginPage } from './pages/HandwerkerLoginPage';
 import { HandwerkerProjectAcceptPage } from './pages/HandwerkerProjectAcceptPage';
 import { HandwerkerProjectDetailsPage } from './pages/HandwerkerProjectDetailsPage';
 import { HandwerkerProjectsPage } from './pages/HandwerkerProjectsPage';
 import { InvestmentOverviewPage } from './pages/InvestmentOverviewPage';
 import { LandingPage } from './pages/LandingPage';
 import { LoginPage } from './pages/LoginPage';
+import { RoleSelectPage } from './pages/RoleSelectPage';
 import { ProjectTypeSelectionPage } from './pages/ProjectTypeSelectionPage';
 import { PackageSelectionPage } from './pages/PackageSelectionPage';
 import { ProjectDetailsPage } from './pages/ProjectDetailsPage';
@@ -34,8 +37,9 @@ export default function App() {
     <>
       <FlowPersistence />
       <Routes>
-      <Route element={<LandingPage />} path="/" />
-      <Route element={<Navigate replace to="/" />} path="/infoscreen-prelogin" />
+      <Route element={<RoleSelectPage />} path="/" />
+      <Route element={<LandingPage />} path="/landing" />
+      <Route element={<Navigate replace to="/landing" />} path="/infoscreen-prelogin" />
       <Route element={<LoginPage />} path="/login" />
       <Route element={<Navigate replace to="/login" />} path="/login-alt" />
       <Route element={<ProjectTypeSelectionPage />} path="/projekt-auswahl" />
@@ -68,6 +72,8 @@ export default function App() {
       <Route element={<HandwerkerProjectsPage />} path="/handwerker-projekte" />
       <Route element={<HandwerkerInquiriesPage />} path="/handwerker-anfragen" />
       <Route element={<HandwerkerDashboardPage />} path="/handwerker-dashboard" />
+      <Route element={<HandwerkerLoginPage />} path="/handwerker-login" />
+      <Route element={<HandwerkerInquiryDetailPage />} path="/handwerker-anfrage-detail" />
       <Route element={<HandwerkerProjectAcceptPage />} path="/handwerker-projekt-annehmen" />
       <Route element={<ChatCustomerCraftPage />} path="/chat-kunde-handwerker" />
       <Route element={<ChatCraftCustomerPage />} path="/chat-handwerker-kunde" />

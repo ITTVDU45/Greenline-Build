@@ -172,6 +172,25 @@ export const assets = {
     'https://www.figma.com/api/mcp/asset/52575d41-3b51-4501-bed7-9a08e09db43d',
   materialGartenwegSurprise:
     'https://www.figma.com/api/mcp/asset/adbd7f8d-5c73-4cdb-beed-00402ac30249',
+  /** Handwerker „Projekt annehmen“ – Garten-Hintergrund (Figma 451:314) */
+  hwAcceptGardenBg:
+    'https://www.figma.com/api/mcp/asset/bb3fb13f-b4b9-440d-8027-1891d5b7daf4',
+  /** Handwerker „Projekt annehmen“ – Vorschaubild neben Basispreis */
+  hwAcceptProjectThumb:
+    'https://www.figma.com/api/mcp/asset/10186c99-8bf6-4344-b0e7-33db5a808dc6',
+  /** Handwerker Anfrage-Detail – Ist-Zustand (Figma 451:320) */
+  hwInquiryCurrentGarden:
+    'https://www.figma.com/api/mcp/asset/5728380d-6eed-4e01-bc92-79c77cbfc422',
+  /** Handwerker Anfrage-Detail – KI-Varianten */
+  hwInquiryVariantA:
+    'https://www.figma.com/api/mcp/asset/edc818d0-4d40-46dc-980f-ece13e834e2f',
+  hwInquiryVariantB:
+    'https://www.figma.com/api/mcp/asset/fdb72515-3d5f-44de-8fe4-97b052c9835f',
+  /** Kontakt freigeschaltet – Header-Logo / Avatar (Figma 451:328, Frame 68) */
+  hwContactBrandLogo:
+    'https://www.figma.com/api/mcp/asset/3ce88bde-b6e9-4218-8bac-e094db5767e5',
+  hwCraftHeaderAvatar:
+    'https://www.figma.com/api/mcp/asset/421ed8e3-c7bb-4dc1-9223-db6aa3df0cd5',
 } as const;
 
 export type TerrasseExtraCardCopy = {
@@ -364,7 +383,10 @@ export const projectTypeThumbs: Record<
 };
 
 export const routes = [
-  { path: '/', label: 'Startseite' },
+  { path: '/', label: 'Rollenauswahl' },
+  { path: '/landing', label: 'Startseite' },
+  { path: '/handwerker-login', label: 'Handwerker Login' },
+  { path: '/handwerker-anfrage-detail', label: 'Handwerker Anfrage-Detail' },
   { path: '/login', label: 'Login' },
   { path: '/projekt-auswahl', label: 'Projektauswahl' },
   { path: '/flaeche-erfassen', label: 'Fotos hinzufügen' },

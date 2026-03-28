@@ -1,5 +1,6 @@
 import { assets } from '../data/screens';
 import { BackTextButton } from './BackTextButton';
+import { BrandLogoLink } from './BrandLogoLink';
 
 type AppHeaderProps = {
   title: string;
@@ -10,7 +11,7 @@ export function AppHeader({ title, subtitle }: AppHeaderProps) {
   return (
     <>
       <header className="top-brand-bar">
-        <img alt="GreenLine Build" className="brand-mark-sm" src={assets.brandLogoAlt} />
+        <BrandLogoLink imgClassName="brand-mark-sm" src={assets.brandLogoAlt} />
         <img alt="" aria-hidden="true" className="avatar-mark" src={assets.analysisAvatar} />
       </header>
       <section className="hero-header">

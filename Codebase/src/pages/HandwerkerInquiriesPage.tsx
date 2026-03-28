@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { DeviceShell } from '../components/DeviceShell';
 
 const inquiries = [
@@ -61,7 +62,13 @@ export function HandwerkerInquiriesPage() {
               <div className="hw-actions">
                 <button className="primary-pill small-pill">Annehmen</button>
                 <button className="danger-pill small-pill">Ablehnen</button>
-                <button className="outline-pill small-pill">Projekt ansehen</button>
+                <Link
+                  className="outline-pill small-pill button-link"
+                  state={{ from: '/handwerker-anfragen' }}
+                  to="/handwerker-anfrage-detail"
+                >
+                  Projekt ansehen
+                </Link>
               </div>
             </article>
           ))}

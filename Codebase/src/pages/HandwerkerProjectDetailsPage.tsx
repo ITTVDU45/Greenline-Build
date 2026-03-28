@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { BackTextButton } from '../components/BackTextButton';
 import { DeviceShell } from '../components/DeviceShell';
 
@@ -21,11 +21,17 @@ const groups = [
   },
 ] as const;
 
+type HandwerkerProjectDetailsState = { from?: string };
+
 export function HandwerkerProjectDetailsPage() {
+  const location = useLocation();
+  const backTarget =
+    (location.state as HandwerkerProjectDetailsState | null)?.from ?? '/handwerker-projekte';
+
   return (
     <DeviceShell className="flow-screen" width={380}>
       <section className="hero-header">
-        <BackTextButton />
+        <BackTextButton fallbackTo={backTarget} />
         <h1>Projekt Details</h1>
         <p>Projekt: Privatgarten #001</p>
       </section>

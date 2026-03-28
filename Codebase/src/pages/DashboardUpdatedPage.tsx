@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { BrandLogoLink } from '../components/BrandLogoLink';
 import { DeviceShell } from '../components/DeviceShell';
 import { migrateLegacySnapshot001, switchToProject, type ProjectTypeTitle } from '../data/projectFlowSnapshot';
 import { assets } from '../data/screens';
@@ -49,7 +50,7 @@ export function DashboardUpdatedPage() {
   return (
     <DeviceShell className="handwerker-screen" width={380}>
       <header className="top-brand-bar">
-        <img alt="GreenLine Build" className="brand-mark-sm" src={assets.brandLogoAlt} />
+        <BrandLogoLink imgClassName="brand-mark-sm" src={assets.brandLogoAlt} />
         <img alt="" aria-hidden="true" className="avatar-mark" src={assets.analysisAvatar} />
       </header>
 

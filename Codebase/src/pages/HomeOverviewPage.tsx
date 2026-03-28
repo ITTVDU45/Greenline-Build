@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
+import { BrandLogoLink } from '../components/BrandLogoLink';
 import { DeviceShell } from '../components/DeviceShell';
+import { assets } from '../data/screens';
 
 const projects = [
   {
@@ -20,7 +22,7 @@ export function HomeOverviewPage() {
   return (
     <DeviceShell className="handwerker-screen" width={390}>
       <section className="handwerker-header">
-        <div className="hw-logo">GL</div>
+        <BrandLogoLink imgClassName="" src={assets.brandLogoAlt} />
         <div>
           <h1>Willkommen, Max</h1>
           <p>Hier findest du deine aktuellen Projekte.</p>

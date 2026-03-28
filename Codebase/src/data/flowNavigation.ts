@@ -5,7 +5,7 @@ import { getCurrentFeatureIndex, setCurrentFeatureIndex } from './customerFlow';
  * Vorherige Seite im Haupt-Flow (kein Browser-History → keine Loops).
  */
 const FLOW_PREVIOUS: Record<string, string> = {
-  '/login': '/',
+  '/login': '/landing',
   '/projekt-auswahl': '/login',
   '/flaeche-erfassen': '/projekt-auswahl',
   '/analyse': '/flaeche-erfassen',
@@ -25,8 +25,8 @@ const FLOW_PREVIOUS: Record<string, string> = {
   '/projekt-details': '/dashboard-aktualisiert',
   '/chat-kunde-handwerker': '/dashboard-aktualisiert',
   '/chat-handwerker-kunde': '/handwerker-dashboard',
-  '/kontaktdaten-freischaltung': '/handwerker-projekt-annehmen',
-  '/handwerker-projekt-annehmen': '/handwerker-dashboard',
+  '/handwerker-projekt-annehmen': '/handwerker-login',
+  '/handwerker-login': '/',
   '/handwerker-projekt-details': '/handwerker-projekte',
 };
 

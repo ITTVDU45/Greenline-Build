@@ -1,15 +1,19 @@
+import { Link } from 'react-router-dom';
+import { BrandLogoLink } from '../components/BrandLogoLink';
 import { DeviceShell } from '../components/DeviceShell';
+import { assets } from '../data/screens';
 
 export function HandwerkerDashboardPage() {
   return (
-    <DeviceShell className="handwerker-screen">
-      <section className="handwerker-header">
-        <div className="hw-logo">GL</div>
-        <div>
-          <h1>Willkommen, Rebo Gala</h1>
-          <p>Hier findest du deine aktuellen Anfragen und Projekte.</p>
-        </div>
-        <div className="hw-avatar" />
+    <DeviceShell className="handwerker-screen" width={390}>
+      <header className="hw-inquiry-topbar">
+        <BrandLogoLink imgClassName="hw-inquiry-brand" src={assets.brandLogoAlt} />
+        <img alt="" className="hw-inquiry-avatar" src={assets.hwCraftHeaderAvatar} />
+      </header>
+
+      <section className="hw-dashboard-intro" aria-label="Begrüßung">
+        <h1>Willkommen, Rebo Gala</h1>
+        <p>Hier findest du deine aktuellen Anfragen und Projekte.</p>
       </section>
 
       <section className="flow-content compact-content">
@@ -41,7 +45,13 @@ export function HandwerkerDashboardPage() {
             <span>geschätzter Preis:</span>
             <strong>10.075 €</strong>
           </div>
-          <button className="primary-pill">Projekt starten →</button>
+          <Link
+            className="primary-pill button-link"
+            state={{ from: '/handwerker-dashboard' }}
+            to="/handwerker-anfrage-detail"
+          >
+            Projekt starten →
+          </Link>
         </article>
       </section>
     </DeviceShell>

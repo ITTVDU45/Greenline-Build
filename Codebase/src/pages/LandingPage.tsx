@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { BrandLogoLink } from '../components/BrandLogoLink';
 import { DeviceShell } from '../components/DeviceShell';
 import { assets } from '../data/screens';
 
@@ -23,9 +24,14 @@ const benefits = [
 export function LandingPage() {
   return (
     <DeviceShell className="landing-screen">
+      <div className="landing-back-row">
+        <Link className="landing-back-link" to="/">
+          ← Zurück
+        </Link>
+      </div>
       <section className="landing-card">
         <div className="landing-brand-row">
-          <img alt="GreenLine Build" className="landing-logo" src={assets.brandLogoAlt} />
+          <BrandLogoLink imgClassName="landing-logo" src={assets.brandLogoAlt} />
           <h2>GreenLine Build</h2>
         </div>
         <h1>
