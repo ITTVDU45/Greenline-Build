@@ -1,6 +1,6 @@
 /**
- * Handwerker /handwerker-anfrage-detail — Aktueller Zustand + KI-Varianten (Figma 66-423, 66-386, …)
- * Variante 2: Standard 66-387 (wenn in Figma nur 66-386 genannt war, per FIGMA_HW_INQUIRY_VARIANT2_NODE_ID anpassen)
+ * Handwerker /handwerker-anfrage-detail — Aktueller Zustand + KI-Varianten (Figma 66-423, 66-386, 66-424)
+ * Variante 2: 66-424 (Override: FIGMA_HW_INQUIRY_VARIANT2_NODE_ID)
  */
 
 import fs from 'node:fs';
@@ -16,7 +16,7 @@ const PNG_SCALE = 2;
 const SPECS = [
   ['FIGMA_HW_INQUIRY_CURRENT_NODE_ID', '66:423', 'hw-frame66-inquiry-current.png'],
   ['FIGMA_HW_INQUIRY_VARIANT1_NODE_ID', '66:386', 'hw-frame66-inquiry-variant1.png'],
-  ['FIGMA_HW_INQUIRY_VARIANT2_NODE_ID', '66:387', 'hw-frame66-inquiry-variant2.png'],
+  ['FIGMA_HW_INQUIRY_VARIANT2_NODE_ID', '66:424', 'hw-frame66-inquiry-variant2.png'],
 ];
 
 function loadEnvFile(filePath) {
