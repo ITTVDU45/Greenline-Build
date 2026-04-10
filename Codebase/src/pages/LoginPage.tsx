@@ -25,7 +25,7 @@ export function LoginPage() {
   return (
     <DeviceShell className="login-screen">
       <div className="login-card">
-        <BrandLogoLink imgClassName="login-logo" src={assets.brandLogo} />
+        <BrandLogoLink imgClassName="login-logo" src={assets.loginFrame2Logo} />
         <h1>GreenLine Build</h1>
         <p>Willkommen zurück</p>
 

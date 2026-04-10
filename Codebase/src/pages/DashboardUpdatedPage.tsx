@@ -50,8 +50,12 @@ export function DashboardUpdatedPage() {
   return (
     <DeviceShell className="handwerker-screen" width={380}>
       <header className="top-brand-bar">
-        <BrandLogoLink imgClassName="brand-mark-sm" src={assets.brandLogoAlt} />
-        <img alt="" aria-hidden="true" className="avatar-mark" src={assets.analysisAvatar} />
+        <BrandLogoLink
+          fallbackSrc={assets.brandLogoAlt}
+          imgClassName="app-header-logo"
+          src={assets.loginFrame2Logo}
+        />
+        <img alt="" aria-hidden="true" className="avatar-mark" src={assets.appHeaderProfileIcon} />
       </header>
 
       <section className="flow-content compact-content">

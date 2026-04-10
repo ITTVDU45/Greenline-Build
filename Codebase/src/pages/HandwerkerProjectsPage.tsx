@@ -23,7 +23,11 @@ export function HandwerkerProjectsPage() {
   return (
     <DeviceShell className="handwerker-screen">
       <section className="handwerker-header">
-        <BrandLogoLink imgClassName="" src={assets.brandLogoAlt} />
+        <BrandLogoLink
+          fallbackSrc={assets.brandLogoAlt}
+          imgClassName=""
+          src={assets.loginFrame2Logo}
+        />
         <div>
           <h1>Willkommen, Rebo Gala</h1>
           <p>Hier findest du alle dir zugeordneten Projekte.</p>

@@ -25,19 +25,21 @@ export function CapturePage() {
 
           <div className="photo-drop-zone">
             <button className="add-photo-button" type="button">
-              +
+              <img
+                alt=""
+                className="add-photo-button-img"
+                decoding="async"
+                src={assets.captureCloudUpload}
+              />
             </button>
             <span>Foto hinzufügen</span>
-            <div aria-hidden="true" className="photo-cloud-pill">
-              <img alt="" height={27} src={assets.captureCloudUpload} width={27} />
-            </div>
           </div>
         </article>
 
         <article className="scan-card scan-card-recommended">
           <div className="scan-card-badge">Empfohlen</div>
           <div aria-hidden="true" className="scan-card-check">
-            <img alt="" height={16} src={assets.captureArCheckmark} width={16} />
+            <img alt="" className="scan-card-check-img" src={assets.captureArCheckmark} />
           </div>
           <div className="scan-card-layout">
             <div className="scan-card-visual">

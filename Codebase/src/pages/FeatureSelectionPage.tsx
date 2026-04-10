@@ -86,9 +86,7 @@ export function FeatureSelectionPage() {
                     alt=""
                     aria-hidden="true"
                     className="feature-check-img"
-                    height={16}
                     src={assets.featureSelectionCheck}
-                    width={16}
                   />
                 ) : (
                   '+'

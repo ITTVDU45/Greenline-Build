@@ -7,7 +7,11 @@ export function RoleSelectPage() {
   return (
     <DeviceShell className="role-select-screen" width={390}>
       <section className="role-select-header">
-        <BrandLogoLink imgClassName="role-select-logo" src={assets.brandLogoAlt} />
+        <BrandLogoLink
+          fallbackSrc={assets.brandLogoAlt}
+          imgClassName="role-select-logo"
+          src={assets.loginFrame2Logo}
+        />
         <h1>GreenLine Build</h1>
         <p>Wähle deine Ansicht, um fortzufahren.</p>
       </section>

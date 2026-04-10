@@ -124,9 +124,7 @@ export function FeatureExtrasPage() {
                           <img
                             alt=""
                             className="feature-check-img"
-                            height={16}
                             src={assets.featureSelectionCheck}
-                            width={16}
                           />
                         </span>
                       ) : (

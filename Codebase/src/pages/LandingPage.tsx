@@ -31,7 +31,7 @@ export function LandingPage() {
       </div>
       <section className="landing-card">
         <div className="landing-brand-row">
-          <BrandLogoLink imgClassName="landing-logo" src={assets.brandLogoAlt} />
+          <BrandLogoLink imgClassName="landing-logo" src={assets.landingBrandIcon} />
           <h2>GreenLine Build</h2>
         </div>
         <h1>
@@ -41,13 +41,16 @@ export function LandingPage() {
         </h1>
       </section>
 
-      <section className="split-showcase">
-        <img alt="Vorher Ansicht" className="split-image split-image-before" src={assets.landingBefore} />
-        <img alt="Nachher Ansicht" className="split-image split-image-after" src={assets.landingAfter} />
-        <div className="split-divider" />
+      <section aria-label="Vorher- und Nachher-Ansicht des Gartens" className="landing-vorher-nachher">
+        <img
+          alt="Vorher- und Nachher-Ansicht des Gartens"
+          className="landing-vorher-nachher-img"
+          decoding="async"
+          src={assets.landingAfter}
+        />
+        <div aria-hidden="true" className="landing-vorher-nachher-divider" />
         <span className="status-pill pill-left">VORHER</span>
         <span className="status-pill pill-right">NACHHER</span>
-        <img alt="" aria-hidden="true" className="split-transfer" src={assets.splitTransfer} />
       </section>
 
       <section className="benefit-grid">

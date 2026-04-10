@@ -60,17 +60,9 @@ const fileSpecs = {
     type: 'svg',
     markup: iconSvg('Vorher / Nachher', '→', 'Transformation im Vergleich'),
   },
-  'capture-ar.svg': {
-    type: 'svg',
-    markup: iconSvg('AR Scan', '▣', 'Flaeche digital erfassen'),
-  },
   'selection-check.svg': {
     type: 'svg',
     markup: iconSvg('Ausgewaehlt', '✓', 'Bereit fuer den naechsten Schritt'),
-  },
-  'capture-upload.svg': {
-    type: 'svg',
-    markup: iconSvg('Upload', '⇪', 'Foto oder Scan hochladen'),
   },
 };
 

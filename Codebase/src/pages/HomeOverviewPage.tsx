@@ -22,7 +22,11 @@ export function HomeOverviewPage() {
   return (
     <DeviceShell className="handwerker-screen" width={390}>
       <section className="handwerker-header">
-        <BrandLogoLink imgClassName="" src={assets.brandLogoAlt} />
+        <BrandLogoLink
+          fallbackSrc={assets.brandLogoAlt}
+          imgClassName=""
+          src={assets.loginFrame2Logo}
+        />
         <div>
           <h1>Willkommen, Max</h1>
           <p>Hier findest du deine aktuellen Projekte.</p>

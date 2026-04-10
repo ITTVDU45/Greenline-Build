@@ -57,6 +57,7 @@ export function FeatureMaterialPage() {
   const isGartenweg = feature === 'gartenweg';
   const hasMaterialThumbs =
     isTerrasse || isRollrasen || isGartenhaus || isBrunnen || isGartenweg;
+  const materialCheckSrc = assets.featureSelectionCheck;
 
   const initialMaterial = useMemo(() => {
     const raw = details[feature].material;
@@ -128,10 +129,8 @@ export function FeatureMaterialPage() {
                     <span aria-hidden="true" className="material-card-check">
                       <img
                         alt=""
-                        height={16}
                         className="feature-check-img"
-                        src={assets.featureSelectionCheck}
-                        width={16}
+                        src={materialCheckSrc}
                       />
                     </span>
                   ) : null}
@@ -160,9 +159,7 @@ export function FeatureMaterialPage() {
                   <img
                     alt=""
                     className="feature-check-img"
-                    height={16}
-                    src={assets.featureSelectionCheck}
-                    width={16}
+                    src={materialCheckSrc}
                   />
                 </span>
               ) : null}

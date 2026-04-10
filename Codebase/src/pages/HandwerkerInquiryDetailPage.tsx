@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
+import { TopBrandBarStrip } from '../components/AppHeader';
 import { BackTextButton } from '../components/BackTextButton';
-import { BrandLogoLink } from '../components/BrandLogoLink';
 import { DeviceShell } from '../components/DeviceShell';
 import { assets } from '../data/screens';
 
@@ -53,10 +53,7 @@ export function HandwerkerInquiryDetailPage() {
 
   return (
     <DeviceShell className="handwerker-screen hw-inquiry-screen" width={390}>
-      <header className="hw-inquiry-topbar">
-        <BrandLogoLink imgClassName="hw-inquiry-brand" src={assets.brandLogoAlt} />
-        <img alt="" className="hw-inquiry-avatar" src={assets.hwCraftHeaderAvatar} />
-      </header>
+      <TopBrandBarStrip className="hw-inquiry-topbar" />
 
       <div className="hw-inquiry-hero-band">
         <BackTextButton className="hw-inquiry-back" fallbackTo={backTarget} />

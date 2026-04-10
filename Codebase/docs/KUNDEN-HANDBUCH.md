@@ -25,16 +25,17 @@ Globale Farben und Abstände stehen in `src/styles.css` unter `:root` (Präfix `
 
 **Rollenauswahl (`/`)** und **Marketing-Landing (`/landing`):** Der **Seitenhintergrund** bleibt dunkel (`body` / `:root`, z. B. `#1f1f1f`); die **Device-Shell** ist bei beiden **weiß** mit Schatten (`.device-shell.role-select-screen` bzw. `.device-shell.landing-screen`). Die Landingpage nutzt kein Vollflächen-Foto mehr als Shell-Hintergrund. Benefit-Karten sind **opak weiß** mit Rand und Schatten; Aktionsbereich und Link „Anmelden“ nutzen **dunkle Schrift**.
 
-Anpassungen am Look: zuerst `:root`-Variablen prüfen, dann sektionsspezifische Klassen (z. B. `.landing-screen`, `.benefit-card`, `.split-showcase`).
+Anpassungen am Look: zuerst `:root`-Variablen prüfen, dann sektionsspezifische Klassen (z. B. `.landing-screen`, `.benefit-card`, `.landing-vorher-nachher`).
 
 ---
 
 ## 3. Workflow Figma → Code
 
 1. **Design** in Figma als Referenz für Layout, Typo und Abstände.
-2. **Assets:** Bilder und Logos liegen typischerweise unter `src/data/screens.ts` (URLs/Pfade) oder als statische Dateien unter `public/`.
-3. **Umsetzung:** Neue Screens als Seiten-Komponente unter `src/pages/`; Route in `App.tsx` ergänzen.
-4. **Styles:** Wiederkehrende Muster in `styles.css` bündeln; Duplikate vermeiden.
+2. **Assets (Quelle Figma → Repo):** Exportierte Medien liegen unter `public/app-assets/` und werden in `src/data/assetFiles.json` referenziert (Pfade über `getMinioAssetUrl` in `screens.ts`). **Projektauswahl `/projekt-auswahl`:** Personal Access Token in `.env.local` (`FIGMA_ACCESS_TOKEN`, Vorlage `env.example`). **`npm run figma:pull`** exportiert Logo und Profil aus den Figma-Nodes **`377:817`** (Logo) und **`377:818`** (Profil, Standard aus dem GreenLine-Build-File) nach **`flow-header-logo-frame60.png`** / **`flow-header-avatar-frame60.png`** (PNG @2x). Optional überschreiben: **`FIGMA_FRAME60_LOGO_NODE_ID`** / **`FIGMA_FRAME60_AVATAR_NODE_ID`**. **`npm run figma:inspect-frame60`** listet weiterhin alle Knoten unter Frame `419:279` zur Orientierung.
+3. **Generierte Platzhalter:** `npm run prepare:assets` erzeugt u. a. programmatische SVGs (`scripts/export-public-assets.mjs`); diese Figma-Header-PNGs werden davon **nicht** überschrieben.
+4. **Umsetzung:** Neue Screens als Seiten-Komponente unter `src/pages/`; Route in `App.tsx` ergänzen.
+5. **Styles:** Wiederkehrende Muster in `styles.css` bündeln; Duplikate vermeiden.
 
 Eine 1:1-Pixel-Übereinstimmung mit jedem Breakpoint ist nicht zwingend; die App ist primär für die **Mobile-Shell** (`DeviceShell`) ausgelegt.
 

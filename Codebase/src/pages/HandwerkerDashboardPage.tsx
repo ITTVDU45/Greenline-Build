@@ -7,7 +7,11 @@ export function HandwerkerDashboardPage() {
   return (
     <DeviceShell className="handwerker-screen" width={390}>
       <header className="hw-inquiry-topbar">
-        <BrandLogoLink imgClassName="hw-inquiry-brand" src={assets.brandLogoAlt} />
+        <BrandLogoLink
+          fallbackSrc={assets.brandLogoAlt}
+          imgClassName="hw-inquiry-brand"
+          src={assets.loginFrame2Logo}
+        />
         <img alt="" className="hw-inquiry-avatar" src={assets.hwCraftHeaderAvatar} />
       </header>
 

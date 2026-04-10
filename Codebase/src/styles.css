@@ -124,6 +124,8 @@ a {
 .role-select-logo {
   display: block;
   height: 88px;
+  object-fit: contain;
+  object-position: center;
   width: 88px;
 }
 
@@ -286,36 +288,32 @@ a {
   margin: 0;
 }
 
-.split-showcase {
+.landing-vorher-nachher {
   height: 337px;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 
-.split-image {
-  height: 337px;
+.landing-vorher-nachher-img {
+  height: 100%;
+  left: 0;
   object-fit: cover;
+  object-position: center top;
   position: absolute;
   top: 0;
+  width: 100%;
 }
 
-.split-image-before {
-  left: 0;
-  width: 198px;
-}
-
-.split-image-after {
-  left: 193px;
-  width: 197px;
-}
-
-.split-divider {
+.landing-vorher-nachher-divider {
   background: var(--glb-text-soft);
   height: 248px;
   left: 194px;
+  pointer-events: none;
   position: absolute;
   top: 12px;
   width: 2px;
+  z-index: 2;
 }
 
 .status-pill,
@@ -336,6 +334,7 @@ a {
   position: absolute;
   top: 57px;
   width: 120px;
+  z-index: 2;
 }
 
 .pill-left {
@@ -347,14 +346,6 @@ a {
   background: rgba(6, 118, 92, 0.45);
   left: 241px;
   width: 132px;
-}
-
-.split-transfer {
-  height: 22px;
-  left: 184px;
-  position: absolute;
-  top: 142px;
-  width: 22px;
 }
 
 .benefit-grid {
@@ -711,14 +702,28 @@ a {
   flex-shrink: 0;
 }
 
+/* Wie Login: login-frame2-logo.png, für schmale Header-Leiste skaliert */
+.top-brand-bar .app-header-logo {
+  display: block;
+  height: 56px;
+  object-fit: contain;
+  object-position: left center;
+  width: 56px;
+}
+
 .brand-mark-sm {
-  height: 80px;
-  width: 81px;
+  display: block;
+  height: 48px;
+  max-width: min(200px, 52vw);
+  object-fit: contain;
+  object-position: left center;
+  width: auto;
 }
 
 .avatar-mark {
   border-radius: 50%;
   height: 53px;
+  object-fit: cover;
   width: 53px;
 }
 
@@ -1281,29 +1286,33 @@ a {
   min-height: 144px;
 }
 
-.photo-cloud-pill {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  margin-top: 4px;
-}
-
-.photo-cloud-pill img {
-  display: block;
-  height: 27px;
-  width: 27px;
-}
-
+/* Frame 59: Cloud-Icon auf blauem Kreis (Design-Token --glb-navy) */
 .add-photo-button {
   align-items: center;
-  background: var(--glb-dark);
+  background: var(--glb-navy);
+  border: none;
   border-radius: 50%;
-  color: #fff;
+  box-shadow: 0 2px 8px rgba(18, 59, 90, 0.28);
+  cursor: pointer;
   display: inline-flex;
-  font-size: 28px;
+  flex-shrink: 0;
   height: 52px;
   justify-content: center;
+  overflow: hidden;
+  padding: 10px;
   width: 52px;
+}
+
+.add-photo-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.add-photo-button-img {
+  display: block;
+  height: 32px;
+  object-fit: contain;
+  width: 32px;
 }
 
 .scan-card-badge,
@@ -1333,24 +1342,28 @@ a {
   top: 12px;
 }
 
+/* Grün + Haken kommen aus Figma-PNG (Gruppe 21:15), kein CSS-Doppel-Hintergrund */
 .scan-card-check {
   align-items: center;
-  background: var(--glb-green);
-  border: 1px solid var(--glb-green);
+  background: transparent;
+  border: none;
   border-radius: 16px;
   display: flex;
   height: 23px;
   justify-content: center;
+  overflow: hidden;
   position: absolute;
   right: 16px;
   top: 12px;
   width: 23px;
 }
 
+.scan-card-check-img,
 .scan-card-check img {
   display: block;
-  height: 14px;
-  width: 14px;
+  height: 23px;
+  object-fit: contain;
+  width: 23px;
 }
 
 .scan-card-copy h3 {
@@ -1371,28 +1384,36 @@ a {
 }
 
 .scan-card-layout {
+  align-items: start;
   display: grid;
   gap: 14px;
-  grid-template-columns: 112px 1fr;
+  grid-template-columns: minmax(124px, 36%) 1fr;
 }
 
 .scan-card-visual {
+  align-items: center;
   background: linear-gradient(135deg, #c9d9c1, #eef2e4 55%, #d8dfd1);
   border-radius: 12px;
-  min-height: 116px;
+  display: flex;
+  justify-content: center;
+  min-height: 100px;
+  min-width: 0;
+  width: 100%;
 }
 
 .scan-card-recommended .scan-card-visual {
   background: #e8ede9;
   overflow: hidden;
-  padding: 0;
+  padding: 6px;
 }
 
+/* AR-Export ist quer (z. B. 684×400): cover + schmale 112px-Spalte hat alles weggeschnitten */
 .scan-card-visual-img {
   display: block;
-  height: 100%;
-  min-height: 116px;
-  object-fit: cover;
+  height: auto;
+  max-height: 132px;
+  object-fit: contain;
+  object-position: center;
   width: 100%;
 }
 
@@ -1894,6 +1915,7 @@ button.provider-card {
 .feature-check-img {
   display: block;
   height: 16px;
+  object-fit: contain;
   width: 16px;
 }
 
@@ -2100,6 +2122,7 @@ button.provider-card {
 .material-card-check .feature-check-img {
   display: block;
   height: 16px;
+  object-fit: contain;
   width: 16px;
 }
 
@@ -2271,6 +2294,284 @@ button.provider-card {
   font-weight: 500;
   line-height: 1.35;
   margin: 0;
+}
+
+/* —— Projektfreischaltung: Hintergrundbild Figma 254-93 (scharf, full-bleed) + Glass-Panels —— */
+.device-shell.project-release-screen {
+  background: #fff;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+}
+
+.project-release-screen.flow-screen {
+  background: transparent;
+  isolation: isolate;
+  min-height: 100vh;
+  overflow-x: clip;
+  position: relative;
+}
+
+.project-release-bg {
+  border-radius: 20px;
+  bottom: 0;
+  left: 0;
+  min-height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.project-release-bg-img {
+  display: block;
+  height: 100%;
+  left: 0;
+  min-height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+/* Nur leichte Aufhellung unten für Footer-Lesbarkeit; Motiv bleibt sichtbar */
+.project-release-bg-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 35%,
+    rgba(255, 255, 255, 0.18) 100%
+  );
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.project-release-stack {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.project-release-screen .top-brand-bar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.project-release-screen .hero-header {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(
+    145deg,
+    rgba(31, 122, 77, 0.94) 0%,
+    rgba(26, 60, 52, 0.96) 55%,
+    rgba(22, 82, 54, 0.98) 100%
+  );
+}
+
+.project-release-body {
+  flex: 1;
+  padding-bottom: 8px;
+}
+
+.project-release-summary {
+  align-items: stretch;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  box-shadow: 0 10px 36px rgba(18, 59, 90, 0.1);
+  display: flex;
+  gap: 14px;
+  margin-top: 4px;
+  padding: 12px;
+}
+
+.project-release-summary-visual {
+  border-radius: 12px;
+  flex: 0 0 108px;
+  overflow: hidden;
+}
+
+.project-release-summary-thumb {
+  display: block;
+  height: 100%;
+  min-height: 102px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.project-release-summary-meta {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  min-width: 0;
+}
+
+.project-release-price-label {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.project-release-price-value {
+  color: var(--glb-dark);
+  font-size: 26px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: -4px 0 0;
+}
+
+.project-release-hw {
+  align-items: center;
+  border-top: 1px solid rgba(226, 232, 240, 0.95);
+  display: flex;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.project-release-hw-avatar {
+  border-radius: 999px;
+  flex-shrink: 0;
+  height: 40px;
+  object-fit: cover;
+  width: 40px;
+}
+
+.project-release-hw-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.project-release-hw-label {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.project-release-hw-name {
+  color: var(--glb-dark);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.project-release-hw-sub {
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.project-release-panel {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 4px 20px rgba(18, 59, 90, 0.06);
+  margin-top: 12px;
+  padding: 14px 16px 16px;
+}
+
+.project-release-panel-title {
+  color: var(--glb-dark);
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.project-release-steps {
+  display: grid;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.project-release-steps li {
+  color: #334155;
+  font-size: 14px;
+  line-height: 1.45;
+  padding-left: 20px;
+  position: relative;
+}
+
+.project-release-steps li::before {
+  background: var(--glb-green);
+  border-radius: 50%;
+  content: '';
+  height: 7px;
+  left: 2px;
+  position: absolute;
+  top: 7px;
+  width: 7px;
+}
+
+.project-release-panel--status {
+  border-left: 4px solid var(--glb-green);
+}
+
+.project-release-status-kicker {
+  color: #64748b;
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.project-release-status-headline {
+  color: var(--glb-dark);
+  display: block;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 8px;
+}
+
+.project-release-status-copy {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.project-release-hint-title {
+  color: var(--glb-dark);
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.project-release-hint-copy {
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.project-release-footer {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.72));
+  margin-top: auto;
+  padding-bottom: 18px;
+  padding-top: 14px;
 }
 
 .investment-overview-card {
@@ -3102,13 +3403,9 @@ button.quality-card:focus-visible {
   padding: 0;
 }
 
+/* Ergänzt .top-brand-bar (Kunden-Header) */
 .hw-inquiry-topbar {
-  align-items: center;
-  background: #fff;
   border-bottom: 1px solid #e6e6e6;
-  display: flex;
-  justify-content: space-between;
-  padding: 4px 8px 4px 4px;
 }
 
 .hw-inquiry-brand {
@@ -3351,26 +3648,70 @@ button.quality-card:focus-visible {
   text-decoration: none;
 }
 
-/* —— Handwerker Projekt annehmen (Figma 451:314) —— */
-.hw-accept-screen {
+/* —— Handwerker Projekt annehmen: Vollflächen-Garten-Backdrop (wie Projektfreischaltung, ohne UI im Bitmap) —— */
+.device-shell.hw-accept-screen {
   background: #fff;
-  display: flex;
-  flex-direction: column;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+}
+
+.hw-accept-screen.flow-screen {
+  background: transparent;
+  isolation: isolate;
   min-height: 100vh;
+  overflow-x: clip;
   padding: 0;
   position: relative;
 }
 
-.hw-accept-topbar {
-  align-items: center;
-  background: #fff;
-  border-bottom: 1px solid #e6e6e6;
+.hw-accept-bg {
+  border-radius: 20px;
+  bottom: 0;
+  left: 0;
+  min-height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 0;
+}
+
+.hw-accept-bg-img {
+  display: block;
+  height: 100%;
+  left: 0;
+  min-height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.hw-accept-bg-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.12) 100%
+  );
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.hw-accept-stack {
   display: flex;
-  flex-shrink: 0;
-  justify-content: space-between;
-  padding: 0 4px 0 2px;
+  flex-direction: column;
+  min-height: 100vh;
   position: relative;
   z-index: 1;
+}
+
+.hw-accept-topbar {
+  border-bottom: 1px solid #e6e6e6;
+  flex-shrink: 0;
+  position: relative;
 }
 
 .hw-accept-brand {
@@ -3392,7 +3733,6 @@ button.quality-card:focus-visible {
   flex-shrink: 0;
   padding: 14px 22px 20px;
   position: relative;
-  z-index: 1;
 }
 
 .hw-accept-green .hw-inquiry-back {
@@ -3416,14 +3756,14 @@ button.quality-card:focus-visible {
   margin: 16px 16px 24px;
   min-height: 0;
   position: relative;
-  z-index: 1;
 }
 
+/* Kein backdrop-filter: vermeidet Chromium-Doppelzeichnung von Text hinter der Karte */
 .hw-accept-card {
-  background: #fff;
-  border: 1px solid #e8e8e8;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(230, 230, 230, 0.95);
   border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
   padding: 14px 14px 18px;
 }
 
@@ -3526,7 +3866,6 @@ button.quality-card:focus-visible {
   margin-top: auto;
   padding: 0 16px 28px;
   position: relative;
-  z-index: 1;
 }
 
 .hw-accept-footer .primary-pill.wide {
@@ -3546,14 +3885,9 @@ button.quality-card:focus-visible {
 }
 
 .hw-contact-topbar {
-  align-items: center;
-  background: #fff;
   border: 1px solid #e6e6e6;
   border-radius: 20px 20px 0 0;
-  display: flex;
-  justify-content: space-between;
   margin: 0 4px;
-  padding: 2px 6px;
 }
 
 .hw-contact-brand {
@@ -3580,68 +3914,93 @@ button.quality-card:focus-visible {
   background: var(--glb-dark);
   border-radius: 0 0 12px 12px;
   color: #fff;
-  margin: 0 -8px 16px;
-  padding: 18px 20px 22px;
+  margin: 0 -8px 14px;
+  padding: 14px 18px 18px;
 }
 
 .hw-contact-green .hw-inquiry-back {
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .hw-contact-title {
-  font-size: 22px;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-  line-height: 1.2;
-  margin: 0 0 8px;
-  text-transform: uppercase;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  margin: 0 0 6px;
+  text-transform: none;
 }
 
 .hw-contact-sub {
-  font-size: 13px;
+  font-size: 12px;
+  line-height: 1.4;
   margin: 0;
-  opacity: 0.95;
+  opacity: 0.92;
 }
 
 .hw-contact-card {
   background: rgba(255, 255, 255, 0.98);
   border: 1px solid #e8e8e8;
-  border-radius: 16px;
-  margin-bottom: 12px;
-  padding: 14px 16px;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  padding: 12px 14px;
 }
 
 .hw-contact-success-icon {
   align-items: center;
   background: #e8f5e9;
-  border-radius: 22px;
+  border-radius: 50%;
   display: flex;
-  font-size: 20px;
-  font-weight: 900;
-  height: 44px;
+  font-size: 15px;
+  font-weight: 700;
+  height: 36px;
   justify-content: center;
-  margin-bottom: 10px;
-  width: 44px;
+  margin-bottom: 8px;
+  width: 36px;
 }
 
 .hw-contact-card h3 {
-  font-size: 14px;
-  font-weight: 800;
-  margin: 0 0 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  margin: 0 0 5px;
 }
 
 .hw-contact-card p {
+  color: #3d4f45;
   font-size: 12px;
-  line-height: 1.4;
+  font-weight: 500;
+  line-height: 1.45;
   margin: 0;
 }
 
 .hw-contact-profile .contact-grid {
-  margin-top: 8px;
+  gap: 6px 12px;
+  grid-template-columns: 78px 1fr;
+  margin-top: 6px;
 }
 
-.hw-contact-profile .contact-grid strong {
-  font-weight: 800;
+/* Labels (erste Spalte) */
+.hw-contact-profile .contact-grid > span:nth-child(odd) {
+  align-self: start;
+  color: #5c6670;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.35;
+  padding-top: 2px;
+}
+
+/* Werte: strong + E-Mail-Zelle */
+.hw-contact-profile .contact-grid > strong,
+.hw-contact-profile .contact-grid > span:nth-child(even) {
+  color: #1a2e24;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.hw-contact-profile .contact-grid > span:nth-child(even) {
+  font-weight: 500;
 }
 
 .hw-contact-divider {
@@ -3652,27 +4011,46 @@ button.quality-card:focus-visible {
 }
 
 .hw-contact-mail {
-  color: inherit;
-  font-weight: 800;
+  color: #1c4d81;
+  font-size: 13px;
+  font-weight: 600;
   text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.hw-contact-profile .profile-tags {
+  gap: 6px 8px;
+  margin-top: 10px;
+}
+
+.hw-contact-profile .profile-tags span {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 5px 10px;
 }
 
 .hw-contact-footer-actions {
   display: grid;
-  gap: 12px;
-  margin-top: 8px;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.hw-contact-footer-actions .primary-pill.wide {
+  font-size: 15px;
+  min-height: 50px;
 }
 
 .hw-contact-later {
   background: none;
   border: 0;
-  color: #111;
+  color: #333;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px;
   text-align: center;
   text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .chat-screen {

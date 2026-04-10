@@ -2,24 +2,13 @@ import { Link } from 'react-router-dom';
 import { AppHeader } from '../components/AppHeader';
 import { FlowProgress } from '../components/FlowProgress';
 import { DeviceShell } from '../components/DeviceShell';
+import { getSelectedFeatures } from '../data/customerFlow';
+import {
+  formatInvestmentEuro,
+  investmentDisplayByFeature,
+  sumInvestmentForFeatures,
+} from '../data/investmentLineItems';
 import { assets } from '../data/screens';
-import { type FeatureKey, getSelectedFeatures } from '../data/customerFlow';
-
-/** Zeilen & Beträge wie Figma Frame 53 (node 377:1682) */
-const investmentDisplayByFeature: Record<
-  FeatureKey,
-  { lineLabel: string; unitLabel: string | null; amountEuro: number }
-> = {
-  terrasse: { lineLabel: 'Terrasse – 45 m²', unitLabel: '180 € / m²', amountEuro: 8100 },
-  rollrasen: { lineLabel: 'Rollrasen – 120 m²', unitLabel: '25 € / m²', amountEuro: 3000 },
-  gartenhaus: { lineLabel: 'Gartenhaus – 12 m²', unitLabel: null, amountEuro: 2500 },
-  brunnen: { lineLabel: 'Brunnen – 1,50 × 2,00 m', unitLabel: null, amountEuro: 2000 },
-  gartenweg: { lineLabel: 'Gartenweg – 20 m²', unitLabel: '100 € / m²', amountEuro: 2000 },
-};
-
-function formatEuro(amount: number): string {
-  return `${amount.toLocaleString('de-DE')} €`;
-}
 
 export function InvestmentOverviewPage() {
   const selectedFeatures = getSelectedFeatures();
@@ -27,7 +16,7 @@ export function InvestmentOverviewPage() {
     key,
     ...investmentDisplayByFeature[key],
   }));
-  const total = rows.reduce((sum, row) => sum + row.amountEuro, 0);
+  const total = sumInvestmentForFeatures(selectedFeatures);
 
   return (
     <DeviceShell className="flow-screen" width={390}>
@@ -65,14 +54,14 @@ export function InvestmentOverviewPage() {
                   {row.unitLabel ?? '\u00a0'}
                 </span>
                 <span className="investment-eq">=</span>
-                <strong className="investment-line-total">{formatEuro(row.amountEuro)}</strong>
+                <strong className="investment-line-total">{formatInvestmentEuro(row.amountEuro)}</strong>
               </div>
             ))}
           </div>
 
           <div className="investment-total-line">
             <span>Basispreis</span>
-            <strong>{formatEuro(total)}</strong>
+            <strong>{formatInvestmentEuro(total)}</strong>
           </div>
         </article>
 

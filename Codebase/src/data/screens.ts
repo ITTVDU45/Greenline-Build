@@ -18,12 +18,12 @@ export const terrasseExtraCards: Record<string, TerrasseExtraCardCopy> = {
     lead: 'Atmosphaerische und funktionale Lichtloesungen fuer die Terrasse.',
     sub: 'Spots · Stufen-/Wegebeleuchtung · Wand-/Akzentlicht',
   },
-  'Stufen / Hoehenunterschiede': {
+  'Stufen / Höhenunterschiede': {
     image: assets.extraTerrasseStufen,
     lead: 'Sichere und saubere Loesungen fuer Niveauwechsel im Terrassenbereich.',
     sub: 'Stufen · Podeste · Ausgleich von Gefaelle',
   },
-  Ueberdachung: {
+  Überdachung: {
     image: assets.extraTerrasseUberdachung,
     lead: 'Schutz vor Sonne und Wetter - fuer mehr Komfort und Nutzungszeit.',
     sub: 'Pergola · Terrassendach · Markise',
@@ -42,7 +42,7 @@ export const rollrasenExtraCards: Record<string, TerrasseExtraCardCopy> = {
     lead: 'Abgestimmte Pflege fuer einen dauerhaft gesunden und belastbaren Rasen.',
     sub: 'Maehintervalle · Duengung · Pflegeempfehlungen',
   },
-  'Automatische Bewaesserung': {
+  'Automatische Bewässerung': {
     image: assets.extraRollrasenBewaesserung,
     lead: 'Effiziente und gleichmaessige Wasserversorgung des Rollrasens.',
     sub: 'Sprinklersysteme · Zeitschalt- / Sensorsteuerung',
@@ -61,12 +61,12 @@ export const gartenhausExtraCards: Record<string, TerrasseExtraCardCopy> = {
     lead: 'Elektrische Anbindung fuer Licht, Steckdosen und Geraete im Gartenhaus.',
     sub: 'Innen-/Aussensteckdosen · Beleuchtung · Geraeteanschluesse',
   },
-  'Regenrinne / Entwaesserung': {
+  'Regenrinne / Entwässerung': {
     image: assets.extraGartenhausRegenrinne,
     lead: 'Kontrollierte Ableitung von Regenwasser zum Schutz der Bausubstanz.',
     sub: 'Regenrinne · Fallrohr · Anschluss an Versickerung',
   },
-  'Ueberdachung / Vordach': {
+  'Überdachung / Vordach': {
     image: assets.extraGartenhausUeberdachung,
     lead: 'Zusaetzlicher Schutz vor Witterung im Eingangs- oder Terrassenbereich.',
     sub: 'Vordach · Ueberstand · Erweiterter Wetterschutz',
@@ -85,7 +85,7 @@ export const brunnenExtraCards: Record<string, TerrasseExtraCardCopy> = {
     lead: 'Gezielte Lichtakzente zur Inszenierung des Brunnens bei Tag und Nacht.',
     sub: 'Unterwasserleuchten · Spots · Akzentbeleuchtung',
   },
-  'Wasserspiel / Geraeusch': {
+  'Wasserspiel / Geräusch': {
     image: assets.extraBrunnenWasserspiel,
     lead: 'Art und Intensitaet des Wasserlaufs zur gewuenschten Atmosphaere.',
     sub: 'Ruhiges Plaetschern · Belebtes Wasserspiel · Geraeuschintensitaet waehlbar',
@@ -109,7 +109,7 @@ export const gartenwegExtraCards: Record<string, TerrasseExtraCardCopy> = {
     lead: 'Funktionale und stimmungsvolle Beleuchtung fuer sichere und gut sichtbare Wege.',
     sub: 'Wegeleuchten · Bodenspots · Orientierungslicht',
   },
-  'Stufen / Hoehenunterschiede': {
+  'Stufen / Höhenunterschiede': {
     image: assets.extraGartenwegStufen,
     lead: 'Saubere Ausfuehrung von Niveauwechseln fuer Komfort und Sicherheit.',
     sub: 'Stufenanlagen · Podeste · Ausgleich von Gefaelle',

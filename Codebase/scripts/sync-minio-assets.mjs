@@ -1,6 +1,14 @@
 import { spawnSync } from 'node:child_process';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { Client } from 'minio';
 import assetCatalog from '../src/data/assetCatalog.json' with { type: 'json' };
+import assetFiles from '../src/data/assetFiles.json' with { type: 'json' };
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const repoRoot = path.resolve(__dirname, '..');
+const publicAppAssetsDir = path.join(repoRoot, 'public', 'app-assets');
 
 const requiredEnvVars = [
   'MINIO_ENDPOINT',
@@ -208,6 +216,23 @@ function resolvePhotoBlobHash(assetKey) {
   return blobHashes.terraceStoneScene;
 }
 
+function readPublicAppAsset(assetKey) {
+  const fileName = assetFiles[assetKey];
+  if (!fileName || typeof fileName !== 'string') return null;
+  const fullPath = path.join(publicAppAssetsDir, fileName);
+  if (!fs.existsSync(fullPath)) return null;
+  const ext = path.extname(fileName).toLowerCase();
+  const contentType =
+    ext === '.png'
+      ? 'image/png'
+      : ext === '.svg'
+        ? 'image/svg+xml'
+        : ext === '.jpg' || ext === '.jpeg'
+          ? 'image/jpeg'
+          : 'application/octet-stream';
+  return { buffer: fs.readFileSync(fullPath), contentType };
+}
+
 function buildGeneratedAsset(assetKey) {
   if (assetKey === 'brandLogo' || assetKey === 'hwContactBrandLogo') {
     return { buffer: logoSvg('primary'), contentType: 'image/svg+xml' };
@@ -245,21 +270,15 @@ function buildGeneratedAsset(assetKey) {
   if (assetKey === 'splitTransfer') {
     return { buffer: iconSvg('Vorher / Nachher', '→', 'Transformation im Vergleich'), contentType: 'image/svg+xml' };
   }
-  if (assetKey === 'captureArIllustration') {
-    return { buffer: iconSvg('AR Scan', '▣', 'Flaeche digital erfassen'), contentType: 'image/svg+xml' };
-  }
-  if (assetKey === 'captureArCheckmark' || assetKey === 'featureSelectionCheck') {
-    return { buffer: iconSvg('Ausgewaehlt', '✓', 'Bereit fuer den naechsten Schritt'), contentType: 'image/svg+xml' };
-  }
-  if (assetKey === 'captureCloudUpload') {
-    return { buffer: iconSvg('Upload', '⇪', 'Foto oder Scan hochladen'), contentType: 'image/svg+xml' };
-  }
   return null;
 }
 
 function buildAssetPayload(assetKey) {
   const generated = buildGeneratedAsset(assetKey);
   if (generated) return generated;
+
+  const fromPublic = readPublicAppAsset(assetKey);
+  if (fromPublic) return fromPublic;
 
   const hash = resolvePhotoBlobHash(assetKey);
   return {

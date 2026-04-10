@@ -4,7 +4,7 @@ import { AppHeader } from '../components/AppHeader';
 import { FlowProgress } from '../components/FlowProgress';
 import { DeviceShell } from '../components/DeviceShell';
 import { loadProjectType, saveProjectType, type ProjectTypeTitle } from '../data/projectTypeSelection';
-import { projectTypeThumbs } from '../data/screens';
+import { assets, projectTypeThumbs } from '../data/screens';
 
 const projectTypes = [
   ['Privatgarten', 'Für private Wohnhäuser mit Terrasse, Pflanzung und Rasenflächen'],

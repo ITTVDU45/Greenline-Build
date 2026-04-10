@@ -72,10 +72,8 @@ export function PackageSelectionPage() {
                 alt="Zahlungsmethoden: u. a. PayPal, Apple Pay, Visa, Mastercard, Google Pay"
                 className="payment-methods-strip"
                 decoding="async"
-                height={31}
                 loading="lazy"
                 src={assets.packagePaymentMethodsStrip}
-                width={207}
               />
             </div>
             <Link className="primary-pill button-link" to="/visualisierung-vorschau">
@@ -109,10 +107,8 @@ export function PackageSelectionPage() {
                 alt="Zahlungsmethoden: u. a. PayPal, Apple Pay, Visa, Mastercard, Google Pay"
                 className="payment-methods-strip"
                 decoding="async"
-                height={31}
                 loading="lazy"
                 src={assets.packagePaymentMethodsStrip}
-                width={207}
               />
             </div>
             <Link className="primary-pill button-link" to="/visualisierung-vorschau">

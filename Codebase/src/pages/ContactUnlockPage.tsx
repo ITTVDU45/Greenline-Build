@@ -1,8 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
+import { TopBrandBarStrip } from '../components/AppHeader';
 import { BackTextButton } from '../components/BackTextButton';
-import { BrandLogoLink } from '../components/BrandLogoLink';
 import { DeviceShell } from '../components/DeviceShell';
-import { assets } from '../data/screens';
 
 type ContactUnlockLocationState = { from?: string };
 
@@ -13,10 +12,7 @@ export function ContactUnlockPage() {
 
   return (
     <DeviceShell className="hw-contact-screen" width={390}>
-      <header className="hw-contact-topbar">
-        <BrandLogoLink imgClassName="hw-contact-brand" src={assets.hwContactBrandLogo} />
-        <img alt="" className="hw-contact-avatar" src={assets.hwCraftHeaderAvatar} />
-      </header>
+      <TopBrandBarStrip className="hw-contact-topbar" />
 
       <div className="hw-contact-body">
         <div className="hw-contact-green">
