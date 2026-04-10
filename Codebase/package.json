@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
+    "prepare:assets": "node scripts/export-public-assets.mjs",
+    "dev": "npm run prepare:assets && vite",
+    "build": "npm run prepare:assets && tsc && vite build",
     "preview": "vite preview",
     "sync:minio-assets": "node --env-file=.env.local scripts/sync-minio-assets.mjs"
   },

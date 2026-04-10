@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 240" role="img" aria-label="GreenLine Build">
+  <rect width="760" height="240" rx="36" fill="#f5f9f2"/>
+  <path d="M84 154c24-60 58-90 102-90 33 0 56 14 76 40l-30 22c-12-14-27-22-45-22-27 0-50 19-65 50-15 31-28 46-54 56l-16-28c16-8 24-14 32-28Z" fill="#9fd26f"/>
+  <text x="170" y="118" font-family="Arial, Helvetica, sans-serif" font-size="48" font-weight="700" fill="#163426">GreenLine</text>
+  <text x="170" y="172" font-family="Arial, Helvetica, sans-serif" font-size="44" fill="#163426">Build</text>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 320" role="img" aria-label="GreenLine AI">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2f7d57"/>
+      <stop offset="100%" stop-color="#9fd26f"/>
+    </linearGradient>
+  </defs>
+  <rect width="320" height="320" rx="40" fill="#f5f9f2"/>
+  <circle cx="160" cy="126" r="78" fill="url(#g)" opacity="0.14"/>
+  <text x="160" y="150" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="92" fill="#22543d">✦</text>
+  <text x="160" y="226" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#153729">GreenLine AI</text>
+  <text x="160" y="258" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#517364">Schnelle Antworten im MVP</text>
+</svg>

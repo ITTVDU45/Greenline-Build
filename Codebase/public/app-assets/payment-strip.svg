@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 140" role="img" aria-label="Zahlungsmethoden">
+  <rect width="760" height="140" rx="28" fill="#ffffff"/>
+  <rect x="28" y="28" width="164" height="84" rx="18" fill="#173c2b"/>
+  <rect x="208" y="28" width="164" height="84" rx="18" fill="#2f7d57"/>
+  <rect x="388" y="28" width="164" height="84" rx="18" fill="#9fd26f"/>
+  <rect x="568" y="28" width="164" height="84" rx="18" fill="#f2c94c"/>
+  <text x="110" y="79" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#f7faf7">VISA</text>
+  <text x="290" y="79" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#f7faf7">MASTERCARD</text>
+  <text x="470" y="79" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#173c2b">PayPal</text>
+  <text x="650" y="79" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#173c2b">SEPA</text>
+</svg>
